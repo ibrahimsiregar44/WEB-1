@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Olivia Delvira</title>
+  <link rel="icon" href="https://i.ibb.co.com/hXZsYxZ/heart.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Dancing+Script&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: #0e0e0e;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+    .page {
+      height: 100vh;
+      width: 100vw;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 1s ease;
+      transform: translateY(20px);
+    }
+    .page.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+    h1, h2 {
+      color: #facc15;
+      margin-bottom: 1rem;
+    }
+    h1 { font-size: 2.2rem; font-family: 'Poppins', sans-serif; }
+    h2 { font-size: 2.8rem; font-family: 'Dancing Script', cursive; }
+    .highlight {
+      color: #84cc16;
+      animation: pulse 1.5s infinite ease-in-out;
+    }
+    .button {
+      background-color: #facc15;
+      color: #000;
+      border: none;
+      border-radius: 25px;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin-top: 30px;
+      transition: background 0.3s;
+    }
+    .button:hover {
+      background-color: #fde047;
+    }
+    img {
+      max-width: 70vw;
+      max-height: 50vh;
+      margin-bottom: 20px;
+      border-radius: 12px;
+    }
+    #page4 {
+      background: radial-gradient(circle at center, #1a1a1a, #0e0e0e);
+      justify-content: flex-start;
+      align-items: center;
+      padding: 40px 20px;
+      overflow-x: auto;
+      flex-direction: column;
+    }
+    .content-row {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+      max-width: 1200px;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+    .letter-box {
+      white-space: pre-line;
+      text-align: justify;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      border: 2px dashed #facc15;
+      background: #1b1b1b;
+      padding: 25px;
+      border-radius: 15px;
+      flex: 1 1 45%;
+      height: auto;
+      overflow-y: auto;
+      min-width: 300px;
+    }
+    .gallery-side {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      flex: 1 1 45%;
+      min-width: 250px;
+    }
+    .photo-frame {
+      background: #222;
+      border: 3px solid #facc15;
+      padding: 10px;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 220px;
+      margin: auto;
+      box-shadow: 0 5px 15px rgba(255,255,255,0.1);
+    }
+    .photo-frame img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .caption {
+      font-size: 14px;
+      margin-top: 8px;
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+    }
+    .floating {
+      animation: float 2s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .polaroid-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      height: 100%;
+      overflow-y: auto;
+      padding-top: 40px;
+    }
+    .photo-output {
+      margin-top: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+    .polaroid-frame {
+      background-color: white;
+      border: 10px solid white;
+      border-bottom: 20px solid white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      width: 220px;
+      font-family: 'Poppins', sans-serif;
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: 0;
+      transform: translateY(-100px);
+      animation: fadeInDrop 1s ease-out forwards;
+    }
+    .polaroid-frame:nth-child(1) { animation-delay: 0.2s; }
+    .polaroid-frame:nth-child(2) { animation-delay: 0.6s; }
+    .polaroid-frame:nth-child(3) { animation-delay: 1s; }
+    .polaroid-caption {
+      font-size: 14px;
+      font-weight: bold;
+      color: #000;
+      margin-top: 8px;
+      text-align: center;
+      padding: 5px;
+    }
+    @keyframes fadeInDrop {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page active" id="page1">
+    <img src="Oliv.jpeg" alt="Olivia" />
+    <h1>Hallo Olivia <span class="highlight">Delvira Kecill 🫶🏻</span></h1>
+    <p>klik selanjutnya yaa bos !!! ✨</p>
+    <button class="button" onclick="goToPage(2)">next brodi ›𝜹</button>
+  </div>
+
+  <div class="page" id="page2">
+    <img src="write.gif" alt="Envelope" class="floating rotating" />
+    <p>are u ready kids? ai ai captain, i can see u, next lagi hehe</p>
+    <button class="button" onclick="goToPage(3)">next lagi ›𝜹</button>
+  </div>
+
+  <div class="page" id="page3">
+    <img src="1.gif" alt="Cake" class="floating" />
+    <h1>Happy Birthday <span class="highlight">Olivia Delvira ♡</span></h1>
+    <button class="button" onclick="goToPage(4)">doa dulu dong ›𝜹</button>
+  </div>
+
+  <div class="page" id="page4">
+    <h2>Olivia Delvira Pratama ♡</h2>
+    <div class="content-row">
+      <div class="gallery-side">
+        <div class="photo-frame">
+          <img src="2.jpg" alt="Foto 1" />
+          <div class="caption">Senyuman sebelum mengenal HSE Team wkwk 🍻</div>
+        </div>
+        <div class="photo-frame">
+          <img src="1.jpeg" alt="Foto 2" />
+          <div class="caption">Muncung kau ituu, not bad la oke kok 🤘🏼</div>
+        </div>
+        <div class="photo-frame">
+          <img src="3.jpg" alt="Foto 3" />
+          <div class="caption">omaga matanya👀</div>
+        </div>
+      </div>
+      <div class="letter-box" id="letterText"></div>
+    </div>
+    <button class="button" onclick="goToPage(5)">see more our memories ›𝜹</button>
+  </div>
+
+  <div class="page" id="page5">
+    <div class="polaroid-wrapper">
+      <h1 style="font-size: 2.5rem; color: #facc15; font-family: 'Dancing Script', cursive; margin-bottom: 30px;">✨ Our memories ✨</h1>
+      <div class="photo-output">
+        <div class="polaroid-frame">
+          <img src="bareng 1.jpg" alt="Extra 1" />
+          <div class="polaroid-caption">First timeku fotobox sama cewe, not bad la ya 🤝</div>
+        </div>
+        <div class="polaroid-frame">
+          <img src="bareng 3.jpeg" alt="Extra 2" />
+          <div class="polaroid-caption">Momen yang kalau foto harus sembunyi haha 🙏🏻</div>
+        </div>
+        <div class="polaroid-frame">
+          <img src="bareng 2.jpg" alt="Extra 3" />
+          <div class="polaroid-caption">Aku lampirin foto kita makan di ultahku biar impas yaa, terimakasih kenangannya, patenn !! 🤩</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <audio id="bg-music" src="Party.mp3" autoplay loop></audio>
+
+  <script>
+    const fullLetter = `🦥 Selamat Ulang Tahun, Bocil!!! 🦥
+
+Sebenarnya nggak banyak yang perlu aku sampein, soalnya kau pasti udah dapet banyak doa dari orang lain. Tapi dari aku, harapanku semoga kau tetap bahagia, ya. Aku doain kau selalu happy. Kalau ada yang berani macem-macem samamu, kupukul mukanya, serius wkwk.
+
+Makasih ya, udah baik banget sama aku selama ini. Semangat terus, karena setelah ini bebannya mungkin bakal sedikit lebih berat... ada Bindia yang bakal nelepon kau tiap hari nanti wkwk. Tapi santai aja, EZ itu dek.
+
+Jangan suka fuck fuckin orang, tanganmu bagus kok—nggak cacat, jangan dibuat gitu terus oke hehe.
+
+Makasih atas semuanya. Sekali lagi, selamat ulang tahun, Olivia Delivra Pratama, yang akan tetap aku sayangi.
+
+I love you, but I’m letting go.
+
+Daaah.`;
+
+    function goToPage(num) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(`page${num}`).classList.add('active');
+      if (num === 4) {
+        typeText(fullLetter, document.getElementById('letterText'), 25);
+      }
+    }
+
+    function typeText(text, element, speed) {
+      element.innerHTML = '';
+      let i = 0;
+      function type() {
+        if (i < text.length) {
+          element.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(type, speed);
+        }
+      }
+      type();
+    }
+
+    window.addEventListener("click", () => {
+      const music = document.getElementById("bg-music");
+      if (music.paused) music.play();
+    });
+  </script>
+</body>
+</html>
